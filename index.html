@@ -1,0 +1,36 @@
+function trackHomework() {
+
+//var ss =  SpreadsheetApp.getActiveSpreadsheet.getRange(B,2).getValue()
+
+//Get emails of student submissions
+
+ //  var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();  // Spreadsheet
+  // var sheet = spreadsheet.getSheetByName("Students");       // Sheet
+   //var range = sheet.getRange(2,2,100,1);                    // Range
+   //var values = range.getValues()                            // Array
+
+  var students = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Students").getRange(2, 2, 100, 1).getValues()
+  Logger.log(JSON.stringify(students))
+
+//Get emails of all students
+
+ var submissions = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Submissions").getRange(2, 2, 100, 1).getValues()
+  Logger.log(JSON.stringify(submissions))
+
+
+//Loop through all student emails and count how many are also in the submission list and how many are not
+
+ students.forEach(function(val,i){
+
+        var email = val[0];
+        if(email.length > 0){
+
+          Logger.log(email)
+
+          }
+
+ })
+
+//Send myself an email with the results
+
+}
